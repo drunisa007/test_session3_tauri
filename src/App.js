@@ -1,7 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 
+import { invoke } from '@tauri-apps/api';
+import logo from './logo.svg';
+
 function App() {
+
+  invoke("hello",{"name":"Aung Thu"}).then((value)=>{
+    console.log(value);
+  })
+
   return (
     <div className="App">
       <header className="App-header">
